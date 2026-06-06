@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { profile } from './data/profile'
 import { AmbientBackground } from './components/AmbientBackground'
 import { Navigation } from './components/Navigation'
@@ -29,6 +30,7 @@ export default function App() {
         </Section>
       </main>
       <Footer github={profile.github} />
+      <Analytics />
     </>
   )
 }
