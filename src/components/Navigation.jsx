@@ -9,7 +9,7 @@ export function Navigation() {
   return (
     <header className="nav">
       <a href="#" className="nav__brand">
-        after hours
+        Abstract-333
       </a>
       <nav className="nav__links">
         {links.map((link) => (

@@ -1,7 +1,9 @@
+import { GitHubIcon } from './GitHubIcon'
+
 export function Hero({ profile }) {
   return (
     <section className="hero" id="top">
-      <p className="hero__eyebrow">Portfolio · {profile.availability}</p>
+      <p className="hero__eyebrow">{profile.availability}</p>
       <h1 className="hero__title">
         <span className="hero__title-line">Backend</span>
         <span className="hero__title-line hero__title-line--accent">
@@ -10,9 +12,6 @@ export function Hero({ profile }) {
         <span className="hero__title-line">Developer</span>
       </h1>
       <p className="hero__handle">
-        <a href={profile.github} target="_blank" rel="noopener noreferrer">
-          github.com/abstract-333
-        </a>
       </p>
       <div className="hero__cta">
         <a href="#experience" className="btn btn--primary">
@@ -22,8 +21,9 @@ export function Hero({ profile }) {
           href={profile.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn--ghost"
+          className="btn btn--ghost github-link"
         >
+          <GitHubIcon size={16} />
           GitHub
         </a>
       </div>
