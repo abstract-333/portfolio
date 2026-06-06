@@ -7,7 +7,6 @@ export function Footer({ github }) {
       <p className="footer__copyright">
          © {new Date().getFullYear()} abstract-333. All rights reserved.
       </p>
-      <p className="footer__legal"> GMT+3</p>
     </footer>
   )
 }
