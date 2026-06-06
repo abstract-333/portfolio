@@ -1,23 +1,301 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Backend & Embedded Developer — Python, C++, FastAPI, IoT. Open to relocation and remote roles."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <title>abstract-333 — Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>abstract-333 | Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --text-muted: #666666;
+      --border: #eaeaea;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0a0a0a;
+        --text: #f5f5f5;
+        --text-muted: #888888;
+        --border: #333333;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .role {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .meta a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .meta a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.25rem;
+    }
+
+    .objective {
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .item {
+      margin-bottom: 1.75rem;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .item-company {
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .item-time {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .item-location {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: -0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    /* Clean Open Source Links matching the header */
+    .os-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .os-link:hover {
+      text-decoration: underline;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .skills-group p {
+      font-size: 0.95rem;
+    }
+
+    .skills-label {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>abstract-333</h1>
+      <div class="role">Backend / Embedded Developer</div>
+      <div class="meta">
+        Open to Relocation · Remote (GMT+3) · 
+        <a href="https://github.com/abstract-333" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Objective</h2>
+      <p class="objective">"Programming is like poetry. Style can be imitated; craftsmanship cannot."</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      
+      <!-- Job 1 -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Embedded Developer <span class="item-company">at Elias Engineering Office</span></div>
+          <div class="item-time">Feb 2025 — Present</div>
+        </div>
+        <div class="item-location">Latakia</div>
+        <ul>
+          <li>Developed Embedded C++ firmware for a 12V Battery Charge Controller featuring real-time monitoring and overcharge/deep-discharge protection.</li>
+          <li>Developed C++ controller to restore Histokinette E7326 tissue processor using strict timing orchestration for motors, heaters, and sensors.</li>
+          <li>Reduced heater run-time from 28 to 5 hours and automated power-loss recovery via optimized sensor validation.</li>
+          <li>Built accelerated test mode that compressed 14-hour processing cycles to 3 minutes using custom time-scaling logic.</li>
+        </ul>
+      </div>
+
+      <!-- Job 2: Open Source -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Open-Source Contributor</div>
+          <div class="item-time">Jan 2025 — Present</div>
+        </div>
+        <ul>
+          <li><a class="os-link" href="https://github.com/EpicStaff/EpicStaff/pull/364" target="_blank" rel="noopener noreferrer">EpicStaff</a>: Reduced Docker image size by ~50% (≈11GB → 5.6GB) via multi-stage builds, significantly improving deployment efficiency and caching.</li>
+          <li><a class="os-link" href="https://github.com/ipinfo/python/pull/123" target="_blank" rel="noopener noreferrer">Ipinfo</a>: Improved Python dependency management using uv, reducing CI/CD execution time ~48%.</li>
+          <li><a class="os-link" href="https://github.com/polarsource/polar/pull/5377" target="_blank" rel="noopener noreferrer">Polar.sh</a>: Fixed Windows build issues and improved onboarding documentation for contributors.</li>
+          <li><a class="os-link" href="https://github.com/locustio/locust/pull/3374" target="_blank" rel="noopener noreferrer">Locust</a>: Add Type Hints to Wait Time Functions</li>
+          <li><a class="os-link" href="https://github.com/EpicStaff/EpicStaff/issues/370" target="_blank" rel="noopener noreferrer">EpicStaff</a>: Discovered configuration bugs and type-safety issues in AI agent settings.</li>
+        </ul>
+      </div>
+
+      <!-- Job 3 -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Backend Developer <span class="item-company">at X-Star Tech</span></div>
+          <div class="item-time">Sep 2023 — Nov 2024</div>
+        </div>
+        <div class="item-location">Latakia</div>
+        <ul>
+          <li>Developed a FastAPI backend implementing Onion Architecture and Unit of Work.</li>
+          <li>Implemented authentication system using JWT and Argon2 password hashing.</li>
+          <li>Reached a 99th percentile latency of 200 ms.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-group">
+          <div class="skills-label">Technical</div>
+          <p>Python, C++, Arduino, FastAPI, Docker, SQL, CI/CD, AI, LLM, RAG, IoT, PostgreSQL, MariaDB, MongoDB, I2C, Finite-State Machines</p>
+        </div>
+        <div class="skills-group" style="margin-top: 0.5rem;">
+          <div class="skills-label">Languages</div>
+          <p>English C1, Arabic, Russian, Ukrainian</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Bachelor of Computer Science</div>
+          <div class="item-time">2019 — 2025</div>
+        </div>
+        <div class="item-location">Latakia University</div>
+        <ul>
+          <li>Diploma Project: LMS Moodle Alternative — Grade 95%</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Bachelor of Business Administration</div>
+          <div class="item-time">2021 — 2026</div>
+        </div>
+        <div class="item-location">Latakia University</div>
+      </div>
+    </section>
+
+    <footer>
+      <p><a href="https://github.com/abstract-333" target="_blank" rel="noopener noreferrer">github.com/abstract-333</a></p>
+    </footer>
+  </div>
+
+</body>
 </html>
