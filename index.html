@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>abstract-333 | Portfolio</title>
+  <title>Bashar Hasan | Portfolio</title>
   <style>
     :root {
       --bg: #ffffff;
       --text: #111111;
       --text-muted: #666666;
       --border: #eaeaea;
+      --link: #0969da; /* Clear, professional blue for light mode */
     }
 
     @media (prefers-color-scheme: dark) {
@@ -18,6 +19,7 @@
         --text: #f5f5f5;
         --text-muted: #888888;
         --border: #333333;
+        --link: #58a6ff; /* Vibrant blue for dark mode */
       }
     }
 
@@ -62,14 +64,21 @@
       color: var(--text-muted);
     }
 
-    .meta a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    
-    .meta a:hover {
+    /* Intuitive Link Styling */
+    .meta a, .os-link, footer a {
+      color: var(--link);
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: text-decoration-thickness 0.2s ease;
+    }
+
+    .meta a { font-weight: 500; }
+    .os-link { font-weight: 600; }
+    footer a { font-weight: 500; }
+    
+    .meta a:hover, .os-link:hover, footer a:hover {
+      text-decoration-thickness: 2px;
     }
 
     section {
@@ -143,16 +152,15 @@
       left: 0;
       color: var(--text-muted);
     }
-
-    /* Clean Open Source Links matching the header */
-    .os-link {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .os-link:hover {
-      text-decoration: underline;
+    
+    .project-image {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      display: block;
     }
 
     .skills-grid {
@@ -181,38 +189,30 @@
       text-align: center;
     }
 
-    footer a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <header>
-      <h1>abstract-333</h1>
+      <h1>Bashar Hasan (abstract-333)</h1>
       <div class="role">Backend / Embedded Developer</div>
       <div class="meta">
         Open to Relocation · Remote (GMT+3) · 
-        <a href="https://github.com/abstract-333" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/abstract-333" target="_blank" rel="noopener noreferrer">GitHub</a> · 
+        <a href="https://dev.to/abstract-333" target="_blank" rel="noopener noreferrer">Dev.to</a> · 
+        <a href="https://medium.com/@abstract-333" target="_blank" rel="noopener noreferrer">Medium</a>
       </div>
     </header>
 
     <section>
-      <h2>Objective</h2>
-      <p class="objective">"Programming is like poetry. Style can be imitated; craftsmanship cannot."</p>
+      <h2>About me</h2>
+      <p class="objective">″Programming is like poetry. Style can be imitated; mastery cannot.‶</p>
     </section>
 
     <section>
       <h2>Experience</h2>
       
-      <!-- Job 1 -->
       <div class="item">
         <div class="item-header">
           <div class="item-title">Embedded Developer <span class="item-company">at Elias Engineering Office</span></div>
@@ -227,7 +227,6 @@
         </ul>
       </div>
 
-      <!-- Job 2: Open Source -->
       <div class="item">
         <div class="item-header">
           <div class="item-title">Open-Source Contributor</div>
@@ -242,7 +241,6 @@
         </ul>
       </div>
 
-      <!-- Job 3 -->
       <div class="item">
         <div class="item-header">
           <div class="item-title">Backend Developer <span class="item-company">at X-Star Tech</span></div>
@@ -258,14 +256,72 @@
     </section>
 
     <section>
+      <h2>Projects</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title"><a class="os-link" href="https://github.com/abstract-333/name-origin-api" target="_blank" rel="noopener noreferrer">Name Origin API</a></div>
+        </div>
+        <ul>
+          <li>Built FastAPI backend using Domain-Driven Design (DDD) principles.</li>
+          <li>Integrated multiple external REST APIs to provide users with likely name origins.</li>
+          <li>Reduced Docker image size by 73% (700 → 185MB).</li>
+          <li>Reduced CI/CD time by 66% (60 → 20 seconds) using Ruff and uv.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title"><a class="os-link" href="https://github.com/abstract-333/university-api" target="_blank" rel="noopener noreferrer">Educational Platform (Moodle Alternative)</a></div>
+        </div>
+        <ul>
+          <li>Developed a fully localized REST API alternative to Moodle LMS using FastAPI, PostgreSQL, and SQLAlchemy.</li>
+          <li>Implemented advanced architectural concepts, including the Repository and Specification patterns, to cleanly decouple business logic from database operations.</li>
+          <li>Engineered a comprehensive feature set including course management, real-time student-instructor interaction, and performance data analysis.</li>
+          <li>Integrated deep infrastructure health-checks and Sentry for real-time application monitoring.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title"><a class="os-link" href="https://abstract-333.github.io/phoenician-transliterator/" target="_blank" rel="noopener noreferrer">Phoenician Tool</a></div>
+        </div>
+        <ul>
+          <li>Convert Arabic or English text into Phoenician script.</li>
+        </ul>
+        <img src="assets/Phoenician_Transliteration_Screenshot.png" alt="Phoenician Transliteration Tool Interface" class="project-image">
+      </div>
+    </section>
+
+    <section>
       <h2>Skills</h2>
       <div class="skills-grid">
         <div class="skills-group">
-          <div class="skills-label">Technical</div>
-          <p>Python, C++, Arduino, FastAPI, Docker, SQL, CI/CD, AI, LLM, RAG, IoT, PostgreSQL, MariaDB, MongoDB, I2C, Finite-State Machines</p>
+          <div class="skills-label">Programming Languages</div>
+          <p>Python, C++, Dart, Java</p>
         </div>
-        <div class="skills-group" style="margin-top: 0.5rem;">
-          <div class="skills-label">Languages</div>
+        <div class="skills-group">
+          <div class="skills-label">Databases</div>
+          <p>SQL, NoSQL, PostgreSQL, MySQL/MariaDB, MongoDB</p>
+        </div>
+        <div class="skills-group">
+          <div class="skills-label">Frameworks</div>
+          <p>FastAPI, Arduino, Django</p>
+        </div>
+        <div class="skills-group">
+          <div class="skills-label">Embedded Systems</div>
+          <p>IoT, I2C, Finite-State Machines, Watchdog</p>
+        </div>
+        <div class="skills-group">
+          <div class="skills-label">DevOps</div>
+          <p>Docker, Docker-Compose, Make, Github Actions</p>
+        </div>
+        <div class="skills-group">
+          <div class="skills-label">Architectures</div>
+          <p>Domain Driven Desigin, Onion Architecture, Unit of Work</p>
+        </div>
+        <div class="skills-group">
+          <div class="skills-label">Spoken Languages</div>
           <p>English C1, Arabic, Russian, Ukrainian</p>
         </div>
       </div>
@@ -279,9 +335,6 @@
           <div class="item-time">2019 — 2025</div>
         </div>
         <div class="item-location">Latakia University</div>
-        <ul>
-          <li>Diploma Project: LMS Moodle Alternative — Grade 95%</li>
-        </ul>
       </div>
       <div class="item">
         <div class="item-header">
@@ -293,7 +346,7 @@
     </section>
 
     <footer>
-      <p><a href="https://github.com/abstract-333" target="_blank" rel="noopener noreferrer">github.com/abstract-333</a></p>
+      <div>© 2026 Bashar Hasan</div>
     </footer>
   </div>
 
